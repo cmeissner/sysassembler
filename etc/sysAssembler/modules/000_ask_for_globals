@@ -1,0 +1,17 @@
+infoMsg "running $(basename $mod)"
+
+COLUMNS=1
+select _env in itp web ts db ep doi-ep san nn
+do
+	case "$_env" in
+		fe|be) 
+			infoMsg "Erstelle ${_env^^}-System"
+			g_environment=$_env
+			break
+			;;
+		* )
+			infoMsg "Bitte gültige Option angeben"
+			continue
+			;; 
+	esac
+done 2>&20

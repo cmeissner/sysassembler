@@ -1,0 +1,2 @@
+infoMsg "cleanup sysstat files"
+rm /var/log/sysstat/*

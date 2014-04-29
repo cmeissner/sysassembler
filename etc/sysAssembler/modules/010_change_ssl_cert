@@ -1,0 +1,5 @@
+infoMsg "running $(basename $mod)"
+
+infoMsg "create new snakeoil ssl cert"
+
+make-ssl-cert generate-default-snakeoil --force-overwrite
