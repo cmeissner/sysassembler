@@ -4,5 +4,5 @@ infoMsg "create new ssh host keys"
 
 for type in rsa dsa ecdsa
 do
-	yes y | ssh-keygen -b 1024 -t $type -f /etc/ssh/ssh_host_${type}_key -N ''
+	yes y | ssh-keygen -b $(test ${_type} == "ecdsa" && echo 521 || echo 1024) -t ${_type} -f /etc/ssh/ssh_host_${_type}_key -N ''
 done

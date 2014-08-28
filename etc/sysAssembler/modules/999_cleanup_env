@@ -1,2 +1,5 @@
 infoMsg "cleanup sysstat files"
 rm /var/log/sysstat/*
+
+infoMsg "cleanup history"
+rm /root/.bash_history

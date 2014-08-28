@@ -1,23 +1,18 @@
 infoMsg "running $(basename $mod)"
 
-#infoMsg "editing udev rules after cloning"
-#read -p "<Enter> drücken!" 2>&20
-#vim /etc/udev/rules.d/70-persistent-net.rules >&10
-#clear
-
 infoMsg "editing interfaces after cloning"
 read -p "<Enter> drücken!" 2>&20
 vim /etc/network/interfaces >&10
 clear
 
 infoMsg "Netzwerk neu starten" 
-/etc/init.d/networking restart
+/sbin/ifdown eth0 && /sbin/ifup eth0
 
 g_first_ip=$(grep eth0 -A 1 /etc/network/interfaces |grep address|awk '{print $2}')
 if host ${g_first_ip}
 then
 	infoMsg "FQDN aus DNS beziehen"
-	g_fqdn=$(host ${g_first_ip} | cut -d " " -f 5)
+	g_fqdn=$(host ${g_first_ip} | head -n1 | cut -d " " -f 5)
 	g_fqdn=${g_fqdn%*.}
 	g_hostname=${g_fqdn%%.*}
 	g_domain=${g_fqdn#*.}
@@ -30,3 +25,6 @@ sed -i -e "s/${g_template_hostname}/${g_hostname}/g" /etc/hostname
 sed -i -e "s/${g_template_ip}/${g_first_ip}/g" -e "s/${g_template_hostname}/${g_hostname}/g" /etc/hosts
 
 hostname ${g_hostname}
+
+infoMsg "Paketquellen aktualisieren"
+apt-get update
