@@ -1,0 +1,8 @@
+etc/sysAssembler/sysAssembler.conf etc/sysAssembler
+etc/sysAssembler/modules/000_ask_for_globals etc/sysAssembler/modules
+etc/sysAssembler/modules/010_change_ssh_keys etc/sysAssembler/modules
+etc/sysAssembler/modules/010_change_ssl_cert etc/sysAssembler/modules
+etc/sysAssembler/modules/010_network_config etc/sysAssembler/modules
+etc/sysAssembler/modules/999_cleanup_env etc/sysAssembler/modules
+usr/lib/sysAssembler/lib/messages usr/lib/sysAssembler/lib
+usr/sbin/sysAssembler usr/sbin

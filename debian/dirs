@@ -1,0 +1,15 @@
+usr
+usr/sbin
+etc
+etc/sysAssembler
+etc/sysAssembler/modules
+usr
+usr/lib
+usr/lib/sysAssembler
+usr/lib/sysAssembler/lib
+usr/share/
+usr/share/sysAssembler
+usr/share/sysAssembler/templates
+var
+var/lib
+var/lib/sysAssembler

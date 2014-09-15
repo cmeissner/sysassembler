@@ -1,0 +1,17 @@
+Source: sysassembler
+Section: admin
+Priority: extra
+Maintainer: Christian Meissner <cme@meissner.sh>
+Build-Depends: debhelper (>= 7.4.15)
+Standards-Version: 3.9.4
+Homepage: http://blog.meissner.sh
+
+Package: sysassembler
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: a tool to do initial configuration for a new system
+ sysassembler will help you to do configuration tasks of a cloned system.
+ It is easy to use and to manage. Written in pure bash so it run on all
+ plattforms which come with bash. 
+ A simple module and template system give you the ability to extend the 
+ system very easy.
